@@ -1,0 +1,18 @@
+{
+  "name": "car-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-ui":"cd my-app && npm install && npm run build",
+    "copy-ui":"@powershell copy   './my-app/build' './my-app-server' -recurse -force ",
+    "server-deb-install":"cd  my-app-server && npm install", 
+    "build-server":"npm run build-ui && npm run server-deb-install && npm run copy-ui",      
+    "start-server-build":"npm run build-server && npm run start-server ",
+    "start-server":"cd my-app-server && node server.js",
+     
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shimon tadesa",
+  "license": "ISC"
+}

@@ -1,0 +1,19 @@
+.Home{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.car-boxx{
+    position: relative;
+    display: inline-flex;
+    padding: 13px 0px 13px 0px;
+    flex-flow: column;
+    margin-left: 24px;
+}
+
+#car-text{
+    position: relative;
+    margin-top: -3px;
+}

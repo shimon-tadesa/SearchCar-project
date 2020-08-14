@@ -1,0 +1,21 @@
+.search{
+    /* background-color: aqua; */
+    width: 100%;
+    height: auto;
+}
+
+#year{
+    position: relative;
+    margin: 2px 10px;
+}
+ 
+.select-box{
+    background-color: rgb(255, 255, 255);
+}
+    
+
+#clearButton{
+    position: relative;
+    margin-left: 57px;
+    border-radius: 2px;
+}
