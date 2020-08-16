@@ -8,14 +8,12 @@ function Home() {
 
     // called when select box is changed
     function onFilterChange(filter) {
-       loadCarData(filter); //filter is now empty so the return data from server is jsonData//1
-       
+       loadCarData(filter); //filter is now empty so the return data from server is jsonData//1  
     }
 
-    function loadCarData(filter){
-        var url = new URL("http://localhost:3000/carData");   
-
-        Object.keys(filter).forEach(key => url.searchParams.append(key, filter[key]));
+    function loadCarData(filter){      
+       var url = new URL(window.location.origin+'/carData');       
+       Object.keys(filter).forEach(key => url.searchParams.append(key, filter[key]));
 
         fetch(url)
         .then(response => {
