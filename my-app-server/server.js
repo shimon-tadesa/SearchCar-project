@@ -70,6 +70,6 @@ app.get('/carData', function (req, res) {
 });
 
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log("server started at port : " + (process.env.PORT || 3000))
+app.listen(process.env.PORT || 9091, () => {
+    console.log("server started at port : " + (process.env.PORT || 9091))
 });
