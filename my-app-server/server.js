@@ -1,75 +1,42 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const JsonData = require('./cars.json');
-
-function getFilteredCars(filter) {
-    
-    let tempArr=[];
-
-    if (!filter.year && !filter.color && !filter.carType) {
-        return JsonData;
-    } else {
-        JsonData.map(car => {
-
-            if (filter.year) {
-                if (car.year != Number(filter.year)) {
-                    return;
-                }
-            }
-        
-            if (filter.color) {
-                if (car.color.toLowerCase() != filter.color.toLowerCase()) {
-                    return;
-                }
-            }
-        
-        
-            if (filter.carType) {
-                if (car.name.toLowerCase() != filter.carType.toLowerCase()) {
-                    return;
-                }
-            }
-        
-            tempArr.push(car);
-        
-        
-        });
-        return tempArr;
-    }
+ 
 
 
 
+const userRoute = require("./routes/user.route");
+const carRoute = require("./routes/car.route");
+const dataBase = require('./services/dataBase'); 
+
+dataBase.connect((res) => {
+    startServer();
+});
+
+function startServer() {
+    app.listen(process.env.PORT || 9091, () => {
+        console.log("server started at port : " + (process.env.PORT || 9091))
+    });
 }
 
-
-app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/ping', function (req, res) {
     return res.send('pong');
 });
 
 
-app.get('/carData', function (req, res) {
+ 
+//express global middlware
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-    try {
-        const filter = {
-            carType: req.query.carType,
-            color: req.query.color,
-            year: req.query.year,
-        }
+// define static folder to serve client    
+app.use(express.static(path.join(__dirname, 'build')));
 
-        let cars = getFilteredCars(filter); //2
-
-        return res.status(200).json({ cars: cars });
-
-    } catch (error) {
-        return res.status(500).json({ msg: "internal server error" });
-    }
-
-});
+// server apis
+app.use("/api/user", userRoute); //user routes
+app.use("/api/car", carRoute)  // car apis
 
 
-app.listen(process.env.PORT || 9091, () => {
-    console.log("server started at port : " + (process.env.PORT || 9091))
-});
+
+
