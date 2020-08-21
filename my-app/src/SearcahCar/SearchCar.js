@@ -26,6 +26,7 @@ let filter = {};
 function Search(props) {
     
     function changeSelect(e) {
+        
         let element = e.target;
         filter[element.id] = element.selectedOptions[0].value;
         props.onSelctBoxChange(filter);

@@ -29,8 +29,21 @@ body{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.links  {
+  color: #0e1011;
+  float: right;
+}
+
+.links a {
+  color: #0e1011;
+  margin-left: 40px;
+}
+
+.userExist{
+  position: relative;
+  width: auto;
+  height: auto;
+  background-color: wheat;
 }
 
 @keyframes App-logo-spin {
