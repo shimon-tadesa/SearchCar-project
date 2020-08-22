@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+const gConfig = global.gConfig;
 
 
 function userContext(req, res, next) {
@@ -13,7 +13,7 @@ function userContext(req, res, next) {
         token = token.slice(7, token.length);
 
 
-        jwt.verify(token, "sisma sodit", (err, tokenData) => {
+        jwt.verify(token, gConfig.jwtSecret, (err, tokenData) => {
             if (err) {
                 next();
             }

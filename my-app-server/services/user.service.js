@@ -1,10 +1,11 @@
 const UserModel = require("../model/user.model");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const gConfig = global.gConfig;
 
 
 
 function signToken(data) {
-   return jwt.sign(data, "sisma sodit", { expiresIn: '3d' });
+   return jwt.sign(data, gConfig.jwtSecret, { expiresIn: '3d' });
 
 }
 

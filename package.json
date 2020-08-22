@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build-ui":"cd my-app && npm install && npm run build",
-    "copy-ui":"@powershell copy   './my-app/build' './my-app-server' -recurse -force ",
+    "copy-ui-to-server":"cd my-app && npm run deploy-to-server ",
     "server-deb-install":"cd  my-app-server && npm install", 
-    "build-server":"npm run build-ui && npm run server-deb-install && npm run copy-ui",      
+    "build-server":"npm run build-ui && npm run copy-ui-to-server && npm run server-deb-install ",      
     "start-server-build":"npm run build-server && npm run start-server ",
     "start-server":"cd my-app-server && node server.js",
+    "start-app-dev":"cd my-app && npm run start",     
+    "start-server-dev":"start-app-dev && cd my-app-server && nodemon server.js",
      
     "test": "echo \"Error: no test specified\" && exit 1"
   },
