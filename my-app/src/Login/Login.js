@@ -6,11 +6,11 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 
 function LoginPage(props) {
-    let userEmail = '';
+    let email = '';
     let password = "";
     const history = useHistory();
     function setEmail(e) {
-        userEmail = e.target.value;
+        email = e.target.value;
 
     }
 
@@ -51,7 +51,7 @@ function LoginPage(props) {
     function loginLocal(){
         let obj = {
             password,
-            userEmail,
+            email,
            type:"local" 
         }
         login(obj);

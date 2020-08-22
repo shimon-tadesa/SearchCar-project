@@ -4,19 +4,20 @@ import axios from 'axios';
 
 
 function Registr(props) {
-    let userEmail = "";
+    let email = "";
     let password = "";
     const history = useHistory();
 
-    const setEmail = e =>{userEmail = e.target.value;}
+    const setEmail = e =>{email = e.target.value;}
     const setPassword = e =>{ password = e.target.value;}
      
 
     
     function registrUser() {
         let obj = {
+            type:"local",
             password,
-            userEmail
+            email
         }
 
         axios.post('/api/user/register', obj).then(res => {

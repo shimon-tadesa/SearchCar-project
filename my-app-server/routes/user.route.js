@@ -24,7 +24,13 @@ app.post("/login", async (req, res) => {
        const retUser = await userService.login(user);
        return res.status(200).json(retUser);
     } catch (error) {
-        return res.status(500).json({ massage: 'internal server error' });
+        if(error =="error bad password"){
+            return res.status(401).json({ massage: 'bad password' });
+        }
+        else{
+            return res.status(500).json({ massage: 'internal server error' });
+        }
+       
     }
    
 });

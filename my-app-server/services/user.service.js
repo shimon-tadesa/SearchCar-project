@@ -22,8 +22,8 @@ function signUser(user) {
 async function register(newUser) {
   try {
     const user = new UserModel(newUser);
-    const userFromDb = await user.save();
-    return userFromDb;
+    let userFromDb = await user.save();
+    return userFromDb.toJSON();
   } catch (error) {
     throw "error registering user";
   }
@@ -31,10 +31,11 @@ async function register(newUser) {
 
 async function loginLocal(umail, pass) {
   try {
-    const userFromDb = await UserModel.findOne({
-      userEmail: umail,
+    let userFromDb = await UserModel.findOne({
+      email: umail,
     });
 
+    userFromDb = userFromDb.toJSON();
     //compare supplied password with password from db
     if (userFromDb.password === pass) {
       // sign in and call cb
@@ -44,6 +45,9 @@ async function loginLocal(umail, pass) {
       throw "error bad password";
     }
   } catch (error) {
+    if(error=="error bad password"){
+      throw "error bad password";
+    }
     throw "error login user";
   }
 }
