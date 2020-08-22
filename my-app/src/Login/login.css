@@ -23,3 +23,29 @@ input {
 button{
     height:41px;
 }
+
+
+.oauth-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:50px;
+
+    
+}
+
+.oauth-container button {
+    margin-bottom:10px;
+    border: none;
+    height: 41px;
+    border-radius: 5px;
+    color:white;
+    cursor: pointer;
+     /* box-shadow: 0px 1px 5px -1px black; */
+}
+
+#gplus-btn{
+    background-color: #ff0000a8;
+}
+#fb-btn{
+    background-color: #2020bcb3;;
+}

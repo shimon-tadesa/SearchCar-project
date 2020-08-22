@@ -2,21 +2,20 @@
 
 "development":{
     "jwtSecret":"sisma_sodit2",
-    "db_mongo":"http://localhost:2017",
+    "db_mongo":"mongodb://localhost:27017/wixDB",
     "facebook": {
-        "clientID": "2226419960954591",
-        "clientSecret": "890aed5cb240f2a205ad11b3097e0578"
+        "appId": "347857763056858" 
     },
     "google": {
-        "clientID": "2226419960954591",
-        "clientSecret": "890aed5cb240f2a205ad11b3097e0578"
+        "clientID": "296697808375-5j5obolp97q37m75av2c9mtma29v8pj9.apps.googleusercontent.com",
+        "clientSecret": "w6vUrkpKXX_9DB6lKYnvXAn6"
     }
 
     
 },
 "production":{
     "jwtSecret":"sisma_sodit1",
-    "db_mongo":"http://shimon@123123123:localhost:3453453453"
+    "db_mongo":"mongodb://localhost:27017/wixDB"
 }
 
 }

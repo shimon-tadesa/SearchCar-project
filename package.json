@@ -11,7 +11,7 @@
     "start-server-build":"npm run build-server && npm run start-server ",
     "start-server":"cd my-app-server && node server.js",
     "start-app-dev":"cd my-app && npm run start",     
-    "start-server-dev":"start-app-dev && cd my-app-server && nodemon server.js",
+    "start-server-dev":" cd my-app-server  && nodemon server.js && npm run start-app-dev",
      
     "test": "echo \"Error: no test specified\" && exit 1"
   },

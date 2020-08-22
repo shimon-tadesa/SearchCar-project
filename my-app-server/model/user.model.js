@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    userEmail: {
+    email: {
      type: String,
      required: true,
      unique: true,
@@ -14,11 +14,26 @@ const userSchema = new mongoose.Schema({
     },
     password: {
       type:String,
-      required:[true,""]
-    }
+      validate: {
+        validator: function(v) {
+          // TODO validate password only needed for local user account
+            if(this.type=="local"){
+              return true;
+            }
+            else{
+              return true;
+            }
+        },
+        message: "password is required1"
+      
+    }},
+    type:String,
+    familyName:String,
+    firstName:String,
+    imageUrl:String
 
   });
-
+ 
 
   const User = mongoose.model('User', userSchema);
 
