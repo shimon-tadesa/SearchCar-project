@@ -41,26 +41,35 @@ function App() {
     if (user) {
       return (
         <div id="user-profie-container">
-          <div id="profile-img-container">
+          {/* <div id="profile-img-container"> */}
             <img src={user.imageUrl} />
           <a id="logout-btn" onClick={userLogOut}>
             logout
           </a>
-          </div>
-          <div> {user.email}</div>
+          {/* </div> */}
+          {/* <div id="user_name"> {user.email}</div> */}
           
         </div>
       );
     }
   }
+
+   function getNavLinks(){
+     if(!user){
+       return(
+        <div className="links-continer">
+        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
+          </div>
+       )
+     }
+   }
   return (
     <div className="App">
       <Router>
         <div className="app-header">
            {getUserProfile()}
-
-          <Link to="/register">Registr</Link>
-          <Link to="/login">Login</Link>
+           {getNavLinks()}
         </div>
 
        
