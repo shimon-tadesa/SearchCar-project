@@ -2,7 +2,7 @@
 
 "development":{
     "jwtSecret":"sisma_sodit2",
-    "db_mongo":"mongodb+srv://shimon:shimon12345@cluster0.a1i1h.mongodb.net/wixDB?retryWrites=true&w=majority",
+    "dbHost":"mongodb://localhost:27017/wixDB",
     "facebook": {
         "appId": "347857763056858" 
     },
@@ -15,7 +15,7 @@
 },
 "production":{
     "jwtSecret":"sisma_sodit1",
-    "db_mongo":"mongodb+srv://shimon:shimon12345@cluster0.a1i1h.mongodb.net/wixDB?retryWrites=true&w=majority"
+    "dbHost":"mongodb+srv://shimon:shimon12345@cluster0.a1i1h.mongodb.net/wixDB?retryWrites=true&w=majority"
 }
 
 }
