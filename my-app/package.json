@@ -14,7 +14,9 @@
     "react-google-login": "^5.1.21",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-use-localstorage": "^3.4.3"
+    "react-use-localstorage": "^3.4.3",
+    "cpx": "^1.5.0",
+    "rimraf": "^3.0.2"
   },
   "proxy": "http://localhost:9091",
   "scripts": {
@@ -38,9 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "cpx": "^1.5.0",
-    "rimraf": "^3.0.2"
   }
 }
