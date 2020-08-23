@@ -12,6 +12,8 @@
     "start-server":"cd my-app-server && node server.js",
     "start-app-dev":"cd my-app && npm run start",     
     "start-server-dev":" cd my-app-server  && nodemon server.js && npm run start-app-dev",
+
+    "postinstall":"npm run build-server",
      
     "test": "echo \"Error: no test specified\" && exit 1"
   },
