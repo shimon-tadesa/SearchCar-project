@@ -100,7 +100,7 @@ function LoginPage(props) {
                     fields="name,email,picture"
                     
                     render={renderProps => (
-                        <button id="fb-btn" onClick={renderProps.onClick} disabled={renderProps.disabled}>Facebook Login</button>
+                        <button id="fb-btn" onClick={renderProps.onClick} disabled={renderProps.disabled}>Facebook Login </button>
                     )}  
                     callback={loginFb} />
             </div>

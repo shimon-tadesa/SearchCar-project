@@ -6,15 +6,17 @@
   "scripts": {
     "build-ui":"cd my-app && npm install && npm run build",
     "copy-ui-to-server":"cd my-app && npm run deploy-to-server ",
+    
     "server-deb-install":"cd  my-app-server && npm install", 
     "build-server":"npm run build-ui && npm run copy-ui-to-server && npm run server-deb-install ",      
     "start-server-build":"npm run build-server && npm run start-server ",
     "start-server":"cd my-app-server && node server.js",
-    "start-app-dev":"cd my-app && npm run start",     
-    "start-server-dev":" cd my-app-server  && nodemon server.js && npm run start-app-dev",
 
-    "postinstall":"npm run build-server",
-     
+    "start-app-dev":"cd my-app && npm run start",     
+    "dev-server":" nodemon ./my-app-server/server.js --inspect",
+    "dev":"npm-run-all --parallel dev-server start-app-dev  ",
+
+    "postinstall":"npm run build-server",     
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "shimon tadesa",

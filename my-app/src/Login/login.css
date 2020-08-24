@@ -47,5 +47,11 @@ button{
     background-color: #ff0000a8;
 }
 #fb-btn{
-    background-color: #2020bcb3;;
+    background-color: #2020bcb3;
+    width: 401px;
+}
+
+.kep-login-facebook.metro {
+    border-radius:6px;
+    width: 400px;
 }
