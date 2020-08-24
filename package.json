@@ -13,7 +13,7 @@
     "start-server":"cd my-app-server && node server.js",
 
     "start-app-dev":"cd my-app && npm run start",     
-    "dev-server":" nodemon ./my-app-server/server.js --inspect",
+    "dev-server":" nodemon --inspect ./my-app-server/server.js ",
     "dev":"npm-run-all --parallel dev-server start-app-dev  ",
 
     "postinstall":"npm run build-server",     
