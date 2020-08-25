@@ -6,7 +6,7 @@ import axios from 'axios';
 function Home() {
     const [displaydCars, setDisplaydCars] = useState([]);
     const [carTitle, seCarTitle] = useState("Car Collection");
-    
+
     // called when select box is changed
     function onFilterChange(filter) {
         loadCarData(filter); //filter is now empty so the return data from server is jsonData//1  
@@ -43,7 +43,7 @@ function Home() {
             {
                 displaydCars.map((car, index) => (
                     <div className="car-boxx" key={index} >
-                        <img src={car.img} width="200px" height="200px" alt="some car" />
+                        <img src={car.img} alt="some car"/>
                         <p id="car-text">{car.name} {car.year} {car.color}</p>
                     </div>
                 ))
