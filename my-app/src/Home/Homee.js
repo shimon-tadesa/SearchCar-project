@@ -6,7 +6,7 @@ import axios from 'axios';
 function Home() {
     const [displaydCars, setDisplaydCars] = useState([]);
     const [carTitle, seCarTitle] = useState("Car Collection");
-
+    
     // called when select box is changed
     function onFilterChange(filter) {
         loadCarData(filter); //filter is now empty so the return data from server is jsonData//1  

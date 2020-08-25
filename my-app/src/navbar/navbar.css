@@ -1,0 +1,28 @@
+
+.header{
+    height:50px;
+    background-color: black;
+    color: white;
+     display: flex;
+}
+
+.links-continer{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #user-profie-container{
+    flex: 1;
+    display: flex;
+  }
+
+
+  #logout-btn {
+    color: #c1c1e0;
+    cursor: pointer;
+    position: relative;
+    font-size: 12px;
+    bottom: -25px;
+    text-decoration: underline;
+  }

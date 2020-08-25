@@ -1,4 +1,4 @@
-const JsonData = require("../cars.json");
+const JsonData = require("../cars.json"); 
 
 function getFilteredCars(filter) {
     let tempArr = [];

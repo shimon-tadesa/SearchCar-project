@@ -78,15 +78,17 @@ function LoginPage(props) {
 
       <div className="oauth-container">
         <button id="gplus-btn" onClick={signIn}>
-          Login with google
+          Login With Google
         </button>
 
         <FacebookLogin
           appId="347857763056858"
           fields="name,email,picture"
+          textButton="Login With Facebook"
+          cssClass="fb-btn"
           render={(renderProps) => (
             <button
-              id="fb-btn"
+             
               onClick={renderProps.onClick}
               disabled={renderProps.disabled}
             >
@@ -96,8 +98,9 @@ function LoginPage(props) {
           callback={loginFb}
         />
       </div>
-
+            <div>Or</div>
       <div className="input-box">
+        Local login
         <input type="email" onChange={setEmail} placeholder="Enter email" />
 
         <input
