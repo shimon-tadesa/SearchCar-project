@@ -9,18 +9,18 @@ function LoginPage(props) {
   let email = "";
   let password = "";
   const history = useHistory();
-  
-  const setEmail = e => { email = e.target.value;}
-  const setPassword = e => { password = e.target.value;}
- 
+
+  const setEmail = (e) => {
+    email = e.target.value;
+  };
+  const setPassword = (e) => {
+    password = e.target.value;
+  };
+
   function loginGoogole(data) {
     let postData = {
       type: "google",
       accessToken: data.accessToken,
-      email:data.profileObj.email,
-      familyName:data.profileObj.familyName,
-      firstName:data.profileObj.givenName,
-      imageUrl:data.profileObj.imageUrl
     };
 
     login(postData);
@@ -30,10 +30,6 @@ function LoginPage(props) {
     let postData = {
       type: "facebook",
       accessToken: data.accessToken,
-      email: data.email,
-      familyName: data.name.split(" ")[1],
-      firstName: data.name.split(" ")[0],
-      imageUrl: data.picture.data.url,
       id: data.id,
     };
 
@@ -88,7 +84,6 @@ function LoginPage(props) {
           cssClass="fb-btn"
           render={(renderProps) => (
             <button
-             
               onClick={renderProps.onClick}
               disabled={renderProps.disabled}
             >
@@ -98,11 +93,10 @@ function LoginPage(props) {
           callback={loginFb}
         />
       </div>
-            <div>Or</div>
+      <div>Or</div>
       <div className="input-box">
         Local login
         <input type="email" onChange={setEmail} placeholder="Enter email" />
-
         <input
           type="password"
           onChange={setPassword}
