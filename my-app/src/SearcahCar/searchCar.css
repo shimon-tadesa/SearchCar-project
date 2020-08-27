@@ -24,6 +24,7 @@
 #clearButton{
     height: 30px;
     position: relative;
-    margin-left: 20px;
+    margin-left: 15px;
     border-radius: 11px;
+    margin-top: 9px;
 }
