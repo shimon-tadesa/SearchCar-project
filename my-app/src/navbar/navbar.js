@@ -1,7 +1,6 @@
 import React from 'react';
 import './navbar.css';
 import {
-    BrowserRouter as Router,
     Link,
   } from "react-router-dom";
 
@@ -31,8 +30,8 @@ function NavBar(props){
     if (user) {
       return (
         <div id="user-profie-container">
-            <img src={user.imageUrl} />
-          <a id="logout-btn" onClick={userLogOut}>
+            <img src={user.imageUrl} alt='some img'/>
+          <a id="logout-btn" onClick={userLogOut} href="/">
             logout
           </a>
         </div>

@@ -37,9 +37,10 @@ function Home() {
 
     return (
         <div className="Home">
-            <h1>Find Your Car</h1>
+            <h1 id="head-name">Find Your Car</h1>
             <Search onSelctBoxChange={onFilterChange} />
             <h3 id="header">{carTitle}</h3>
+            {!displaydCars ? <div id="loading"></div> : ''}
             {
                 displaydCars.map((car, index) => (
                     <div className="car-boxx" key={index} >

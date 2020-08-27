@@ -12,6 +12,12 @@
     justify-content: flex-end;
   }
 
+  .links-continer a:hover{
+    color:white;
+    font-weight: 600;
+    transition: 0.1s;
+  }
+
   #user-profie-container{
     flex: 1;
     display: flex;
