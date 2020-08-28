@@ -6,14 +6,22 @@
 
 #head-name{
     font-style: italic;
+    color: rgb(57, 51, 51);
 }
 
+#head-name:hover{
+   color: rgb(0, 0, 0);
+   transition: 0.1s;
+}
 #header{
     font-style: italic;
-    font-size: 20px;
-    /* position: relative; */
+    font-size: 22px;
+    color: rgb(57, 51, 51);
 }
 
+#header:hover{
+    color: rgb(0, 0, 0);
+}
 
 
 .car-boxx{
@@ -31,17 +39,27 @@
  margin-right: 17px;
 }
 
+.car-boxx img:hover {
+    position:relative;
+    transition: 0.7s;
+    width:255px;
+    height:210px;
+    display:block;
+    z-index:999;
+}
+
 #car-text{
     position: relative;
     margin-top: -3px;
 }
 #car-text:hover{
     color: black;
-    font-weight:200;
+    font-weight:600;
     transition: 0.5s;
+    
 }
 
-#loading {
+#loading-data {
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid #15181b;
@@ -49,6 +67,7 @@
     height: 20px;
     -webkit-animation: spin 2s linear infinite; 
     animation: spin 2s linear infinite;
+    display: inline-block;
   }
 
   @-webkit-keyframes spin {

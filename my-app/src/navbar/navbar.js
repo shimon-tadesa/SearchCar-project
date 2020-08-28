@@ -30,7 +30,7 @@ function NavBar(props){
     if (user) {
       return (
         <div id="user-profie-container">
-            <img src={user.imageUrl} alt='some img'/>
+            <img src={user.imageUrl} alt='img'/>
           <a id="logout-btn" onClick={userLogOut} href="/">
             logout
           </a>

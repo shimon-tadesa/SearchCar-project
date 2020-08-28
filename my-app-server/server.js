@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // server apis
 app.use("/api/user", userRoute); //user routes
-app.use("/api/car", carRoute)  // car apis
+app.use("/api/car", carRoute);  // car apis
 
 
 

@@ -5,6 +5,20 @@
     "color": "Red",
     "img": "https://www.icar.co.il/_media/images/models/new/mazda/3/new/mazda-3-new-Front.jpg"
   },
+
+  {
+    "name": "Micubisi",
+    "year": 2020,
+    "color": "Blue",
+    "img": "https://www.icar.co.il/_media/images/models/new/mitsubishi/asx/new/mitsubishi-asx-new-Front..jpg"
+  },
+
+  {
+    "name": "Ford",
+    "year": 2020,
+    "color": "Blue",
+    "img": "https://www.autodeal.com.ph/custom/car-model-photo/original/ford-ecosport-2019-5b8e273a917c1.jpg"
+  },
   {
     "name": "Honda",
     "year": 2019,
