@@ -38,6 +38,7 @@ function LoginPage(props) {
   const { signIn } = useGoogleLogin({
     onSuccess: loginGoogole,
     onFailure: loginGoogole,
+    scope:"profile email",
     clientId:
       "296697808375-5j5obolp97q37m75av2c9mtma29v8pj9.apps.googleusercontent.com",
   });
