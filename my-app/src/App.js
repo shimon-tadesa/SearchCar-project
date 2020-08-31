@@ -3,6 +3,7 @@ import Home from "./Home/Homee";
 import Registr from "./Registr/Registr";
 import Login from "./Login/Login";
 import NavBar from './navbar/navbar';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,21 +15,45 @@ import "./App.css";
 import axios from "axios";
 
 
+let apiCalls = 0;
+ 
 
-axios.interceptors.request.use(function (config) {
-  let user = localStorage.getItem("user");
-  if (user) {
-    user = JSON.parse(user);
-    config.headers.Authorization = "Bearer " + user.token;
-  }
-  
-  return config;
-});
+ 
 
 
 
 function App() {
-  
+  const [isLoading, setIsLoading] = useState(false);
+  axios.interceptors.request.use(function (config) {
+    apiCalls++
+    console.log("loading data ...");
+    setIsLoading(true);
+    let user = localStorage.getItem("user");
+    if (user) {
+      user = JSON.parse(user);
+      config.headers.Authorization = "Bearer " + user.token;
+    }
+    
+    return config;
+  });
+  axios.interceptors.response.use(function (response) {
+    apiCalls--;
+    if(apiCalls==0){
+      setIsLoading(false);
+      console.log("loading finished");
+    }
+    return response;
+  }, function (error) {
+    apiCalls--;
+    if(apiCalls==0){
+      setIsLoading(false);
+      console.log("loading finished");
+    }
+    return Promise.reject(error);
+  });
+
+
+
   const us = localStorage.getItem("user");
   let userFromStorage = null;
   if (us) {
@@ -43,6 +68,10 @@ function App() {
   
   return (
     <div className="App">
+      {isLoading ? <div id="loadind-data-container">
+        <div id="loading-data"></div>
+      </div>:""}
+       
       <Router>
 
         <NavBar user={user} onLogout={onLogout}/>
