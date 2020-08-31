@@ -38,7 +38,7 @@ function LoginPage(props) {
   const { signIn } = useGoogleLogin({
     onSuccess: loginGoogole,
     onFailure: loginGoogole,
-    scope:"profile email",
+    scope: "profile email",
     clientId:
       "296697808375-5j5obolp97q37m75av2c9mtma29v8pj9.apps.googleusercontent.com",
   });
@@ -52,17 +52,15 @@ function LoginPage(props) {
     login(obj);
   }
 
-  function login(postData) {
-    axios
-      .post("/api/user/login", postData)
-      .then((res) => {
-        localStorage.setItem("user", JSON.stringify(res.data));
-        props.onLogin(res.data);
-        history.push("/");
-      })
-      .catch(function (error) {
-        console.log("error getting data");
-      });
+  async function login(postData) {
+    try {
+      const res = await axios.post("/api/user/login", postData);
+      localStorage.setItem("user", JSON.stringify(res.data));
+      props.onLogin(res.data);
+      history.push("/");
+    } catch (error) {
+      console.log("error getting data");
+    }
   }
 
   useEffect(() => {
@@ -94,7 +92,7 @@ function LoginPage(props) {
           callback={loginFb}
         />
       </div>
-      <div>Or</div>
+      <div>Or</div> 
       <div className="input-box">
         Local login
         <input type="email" onChange={setEmail} placeholder="Enter email" />
