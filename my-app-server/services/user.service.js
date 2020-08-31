@@ -58,19 +58,20 @@ async function loginLocal(umail, pass) {
 // if user doesnt exist in db than register it
 async function onOauthLogin(user) {
   const dbUser = await UserModel.findOne({ email: user.email });
-  let userObj;
+  let resData;
   // if doesnt exist  create user
   if (!dbUser) {
     await register(user);
+    resData = signUser(user);
   } else {
     //should remove id from response
-    userObj = dbUser.toJSON();
-    delete userObj._id;
-    delete userObj.__v;
+    let userFromDb = dbUser.toJSON();
+    delete userFromDb._id;
+    delete userFromDb.__v;
+    //sign in user
+    resData = signUser(userFromDb);
   }
 
-  //sign in user
-  let resData = signUser(userObj);
   return resData;
 }
 
