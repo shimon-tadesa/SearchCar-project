@@ -6,7 +6,6 @@ import axios from "axios";
 function Home() {
   const [displaydCars, setDisplaydCars] = useState([]);
   const [carTitle, seCarTitle] = useState("Car Collection");
-  const [loading, isLoading] = useState(true);
 
   // called when select box is changed
   function onFilterChange(filter) {
@@ -24,7 +23,6 @@ function Home() {
       .then((res) => {
         let carData = res.data;
         setDisplaydCars(carData.cars);
-        isLoading(false);
         let carTitle =
           carData.cars.length > 0
             ? "Car Collection"
@@ -42,21 +40,17 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1 id="head-name">Find Your Car</h1>
+      <h1 id="head-name">Cars App</h1>
       <Search onSelctBoxChange={onFilterChange} />
       <h3 id="header">{carTitle}</h3>
-      {loading ? (
-        <div id="loading-data"></div>
-      ) : (
-        displaydCars.map((car, index) => (
-          <div className="car-boxx" key={index}>
-            <img src={car.img} alt="some car" />
-            <p id="car-text">
-              {car.name} {car.year} {car.color}
-            </p>
-          </div>
-        ))
-      )}
+      {displaydCars.map((car, index) => (
+        <div className="car-boxx" key={index}>
+          <img src={car.img} alt="some car" />
+          <p id="car-text">
+            {car.name} {car.year} {car.color}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }

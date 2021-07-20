@@ -38,14 +38,14 @@ function App() {
   });
   axios.interceptors.response.use(function (response) {
     apiCalls--;
-    if(apiCalls==0){
+    if(apiCalls===0){
       setIsLoading(false);
       console.log("loading finished");
     }
     return response;
   }, function (error) {
     apiCalls--;
-    if(apiCalls==0){
+    if(apiCalls===0){
       setIsLoading(false);
       console.log("loading finished");
     }
